@@ -88,14 +88,14 @@
 
                             <h4>Key Features</h4>
                             <ul>
-                                <li>Describe one major feature.</li>
-                                <li>Describe another major feature.</li>
-                                <li>Describe your input validation or menu system.</li>
+                                <li>Low-Level Binary File Persistence: In this feature it writes all account information from user's input directly into a binary database save it. When the application boots back up, that binary file is loaded and the information printed back onto the screen. </li>
+                                <li>Multi-Account Management & Transacting: Users can dynamically open and link separate Checking and Savings account tiers under a single logged-in profile identity to execute Deposits, Withdrawals, and interpersonal pointer transfers.</li>
+                                <li>Line-Safe Input Validation Escape Routes: The menu workflow uses strict line-by-line reading with std::getline and try-catch blocks to reject alphanumeric junk input (like '965abc') without skipping prompts, while allowing users to type '0' to cancel actions instantly.</li>
                             </ul>
 
                             <h4>What I Learned</h4>
                             <p>
-                                Explain one challenge you faced, how you solved it, and what you learned from the process.
+                                A challenge I faced was ensuring the console app could pause between menus so the user had time to read the confirmation screens. Originally I used the 'system("pause")' windows command to freeze the terminal screen. Since the command was specifically used for windows, there was the possibility that it would not work for Linux or macOS, so I decided to completely remove that code and put together a custom pause_execution function inside my InputFilter class. It relies on standard C++ string and getline code to print a custom prompt and wait for a newline character, while keeping the console running without any crashes or bugs across all three Operating systems.
                             </p>
                             <p>
                                 Profile image sourced from Canva AI.
